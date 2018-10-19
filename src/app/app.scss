@@ -14,3 +14,27 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.toolbar-background {
+	background: #6c3;
+	background-color: #7D4;
+}
+.toolbar {
+	padding: 8px;
+	min-height: 20px;
+}
+.title {
+	margin: auto;
+	width: calc(100% - 100px);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.pv_logo {
+	text-align: center;
+}
+.pv_loading {
+	font-size: 1.25em;
+	color: #444;
+	font-weight: bold;
+}

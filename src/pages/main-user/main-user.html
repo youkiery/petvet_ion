@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+			<ion-searchbar
+				[(ngModel)]="search_key"
+				[showCancelButton]="shouldShowCancel"
+				(ionInput)="searchProd($event)"
+				(ionCancel)="searchCancel($event)">
+			</ion-searchbar>
+		</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="pv_shop">
+		<div class="pv_cate" *ngFor="let cate of category">
+			<p class="pv_cate_title">
+				{{title}}
+			</p>
+			<div class="pv_cate_body">
+				<div class="pv_cate_product" *ngFor="let cate_prod of cate['product']">
+					<p class="pv_prod_name">
+						{{cate_prod['name']}}
+					</p>
+					<div class="pv_fake_image">
+						<img class="pv_prod_image" src="{{cate_prod['image']}}">
+					</div>
+					<div class="pv_prod_price">
+						<span class="pv_prod_sale" *ngIf="cate_prod['sale']; else nosale">
+							{{cate_prod['price']}} 
+							-({{cate_prod['sale']}})
+						</span>
+						<ng-template #nosale>
+							{{cate_prod['price']}}
+						</ng-template>
+					</div>
+					<div class="pv_prod_status">
+						<p *ngIf="!cate_prod['number']">
+							{{lang['soldout']}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-content>

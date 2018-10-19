@@ -1,14 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      {{lang.title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+	<div class="pv_logo">
+		<img src="{{image.logo}}" />
+		<p class="pv_loading">
+			{{lang.loading}}
+			{{loading_percent}}%
+		</p>
+	</div>
 </ion-content>
+
